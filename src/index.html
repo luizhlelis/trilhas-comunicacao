@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bgimg {
+        background-image: url('./assets/amazon-rainforest-wallpapper.jpg');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+    }
+
+    .topleft {
+        position: absolute;
+        top: 0;
+        left: 16px;
+    }
+
+    .bottomright {
+        position: absolute;
+        bottom: 0;
+        right: 16px;
+    }
+
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    hr {
+        margin: auto;
+        width: 40%;
+    }
+
+    h1,
+    p,
+    hr {
+        color: #f0a113;
+        border-color: #f0a113;
+        font-weight: bold;
+        text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    #content {
+        position: relative;
+    }
+
+    #content img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        max-width: 200px;
+    }
+
+    a
+    {
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .fab {
+        text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
+    }
+
+    @media only screen and (max-width: 700px) {
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        #content img {
+            max-width: 100px;
+        }
+    }
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trilhas · Portal de comunicação e meio ambiente</title>
+    <meta name="description" content="Conteúdos, notícias e artigos, com tudo que envolve o meio ambiente e a população indígena.">
+    <meta property="og:description" content="Tilhas comunicacao">
+    <meta name="author" content="Amanda Lelis">
+    <meta property="title" content="Trilhas Comunicacao">
+    <link type="text/css" rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="bgimg">
+        <div id="content">
+            <img alt="logo trilhas" src="assets/trilhas-logo.png" class="ribbon" />
+        </div>
+
+        <div class="middle">
+            <h1 class="h1">🗞️ em construção</h1>
+            <hr>
+            <p id="demo"></p>
+        </div>
+        <div class="bottomright">
+            <a href="https://www.linkedin.com/in/lelis-amanda">
+                <i class="fab fa-linkedin-in" style="font-size: 40px;"></i>
+            </a>
+            <a href="https://www.instagram.com/amoralelis/">
+                <i class="fab fa-instagram" style="font-size: 40px;"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Mar 1, 2022 00:00:01").getTime();
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
